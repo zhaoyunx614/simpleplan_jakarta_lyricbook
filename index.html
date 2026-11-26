@@ -423,6 +423,18 @@
 .m-c2 .mt .tx{color:#ff6a3a;text-shadow:0 0 10px #ff5a2a99}
 .m-c3{background:linear-gradient(#ffe600 0 70%,#3aa8e8 70%);color:#111}
 .p-c0{--hb:#2b3fb8;--ht:#ffd23c}.p-c1{--hb:#1b1b1b;--ht:#3fd25a}.p-c2{--hb:#0b0b0b;--ht:#ff5a2a}.p-c3{--hb:#ffe600;--ht:#111}
+
+.t-kitc .hero{min-height:calc(clamp(370px,34vw,440px) + 260px)!important}
+.t-kitc .note2{top:calc(14px + env(safe-area-inset-top));width:30%;max-width:230px;padding:10px 10px 12px;background:repeating-linear-gradient(#0000 0 17px,#9ec9f04d 17px 18px) 0 26px/100% 100% no-repeat,#f4f2ec;box-shadow:2px 4px 8px #0007;transform:rotate(var(--r));z-index:1;-webkit-mask:linear-gradient(#000 calc(100% - 8px),#0000 0),conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 0 100%/10px 8px repeat-x;mask:linear-gradient(#000 calc(100% - 8px),#0000 0),conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 0 100%/10px 8px repeat-x}
+.t-kitc .note2::before{content:"";position:absolute;left:50%;top:-6px;width:56px;height:16px;transform:translateX(-50%) rotate(-3deg);background:#ffffff99;box-shadow:0 1px 2px #0003}
+.t-kitc .note2 *{position:static}
+.t-kitc .note2 .nh{display:block;font:400 clamp(11px,2.6vw,15px)/1.2 "Permanent Marker",cursive;color:#e2502b;margin-bottom:4px}
+.t-kitc .note2 ol{margin:0;padding-left:1.7em;font:400 clamp(10px,2.4vw,13px)/18px "Permanent Marker",cursive;color:#1a1a1a}
+.t-kitc .note2 li{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.t-kitc .note2 li::marker{color:#e2502b}
+.t-kitc .ph8{z-index:3!important}
+.pwall .pst,.t-kitc .ph8{cursor:default!important}
+.plus{display:none!important}
 @media (prefers-reduced-motion:reduce){.song *{animation:none!important}}
 </style>
 <style>
@@ -795,15 +807,15 @@ const ART={
   '<polygon points="140,52 260,52 330,300 70,300" fill="#ffffff" opacity=".07"/>'+m+'</svg>'},
  sp08(s,i,R){let b="";let x=0;while(x<100){const w=+pct(R,8,18);b+='<div class="bld" style="left:'+x+'%;width:'+w+'%;height:'+pct(R,28,62)+'%"></div>';x+=w+ +pct(R,0,3)}return '<div class="lamp"></div>'+b+'<div class="road"></div><div class="leak"></div><div class="grain"></div>'},
  gyho(s,i,R){const slots=[[1,'calc(8px + env(safe-area-inset-top))',-6],[26,'calc(2px + env(safe-area-inset-top))',4],[51,'calc(12px + env(safe-area-inset-top))',-3],[76,'calc(4px + env(safe-area-inset-top))',6],[12,'clamp(128px,17vw,190px)',5],[40,'clamp(122px,16vw,182px)',-5],[67,'clamp(132px,17vw,196px)',3]];let p="";
-  slots.forEach(([x,y,r],k)=>{const img=POST["poster-"+k];p+='<div class="pst ps'+k+(img?' has':'')+'" data-slot="'+k+'" title="Tap to add your own picture" style="left:'+x+'%;top:'+y+';--r:'+r+'deg'+(img?';background-image:url('+img+')':'')+'">'+(img?'':POSTER[k])+'<b class="plus">+</b></div>'});
+  slots.forEach(([x,y,r],k)=>{const img=POST["poster-"+k];p+='<div class="pst ps'+k+(img?' has':'')+'" data-slot="'+k+'" style="left:'+x+'%;top:'+y+';--r:'+r+'deg'+(img?';background-image:url('+img+')':'')+'">'+(img?'':POSTER[k])+'</div>'});
   const dc=["#e6007e","#111","#1fa3ff","#2bb34a","#ff8a3d","#e8b800","#d9172a"],keys=Object.keys(DOOD);let d="";for(let k=0;k<10;k++){const sz=pct(R,24,48);d+='<svg class="dd" viewBox="0 0 24 24" style="left:'+pct(R,0,94)+'%;top:'+pct(R,0,80)+'%;width:'+sz+'px;height:'+sz+'px;--r:'+pct(R,-25,25)+'deg;--dl:'+(k*.07).toFixed(2)+'s;color:'+dc[k%dc.length]+'"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">'+DOOD[keys[k%keys.length]]+'</g></svg>'}
   return p+d},
  toftt(s,i,R){let d="";const btl=[[14,22],[50,-10],[84,-28]];btl.forEach(([x,a],b)=>{d+='<div class="btl" style="left:calc('+x+'% - 14px);transform:rotate('+a+'deg)"></div>';for(let k=0;k<26;k++)d+='<i class="drop" style="left:'+x+'%;--a:'+(a+ +pct(R,-28,28))+'deg;--d:'+pct(R,160,360)+'px;animation-delay:-'+pct(R,0,1.6)+'s;animation-duration:'+pct(R,1.1,2)+'s"></i>'});
   const fc=["#ffe27a","#ff4d4d","#4dc3ff","#ffffff","#7dff8a","#ff9a3d"];let fw="";for(let k=0;k<6;k++){const x=pct(R,6,94),y=pct(R,6,40),c=fc[k%6],dl=pct(R,0,2.4);let rays="";for(let r=0;r<14;r++)rays+='<i style="--rr:'+(r*360/14)+'deg;background:'+c+'"></i>';fw+='<div class="fw" style="left:'+x+'%;top:'+y+'%;animation-delay:-'+dl+'s">'+rays+'</div>'}
   let cf="";const cc=["#ef7d22","#c8102e","#fff","#f2b632","#1f6fb5"];for(let k=0;k<30;k++)cf+='<i class="cf2" style="left:'+pct(R,0,100)+'%;background:'+cc[k%5]+';animation-duration:'+pct(R,3,6)+'s;animation-delay:-'+pct(R,0,6)+'s;--x:'+pct(R,-60,60)+'px"></i>';
   return fw+'<div class="rib">Taking One for the Team · 2016</div>'+d+cf},
- kitc(s,i,R){const words=["PERFECT","ADDICTED","KID","JUMP","GROW UP","SHUT UP!","DAY 1","25 YRS","RESET"];let a="";for(let k=0;k<6;k++)a+='<div class="scrap" style="left:'+pct(R,-6,80)+'%;top:'+pct(R,-4,50)+'%;width:'+pct(R,120,220)+'px;height:'+pct(R,80,150)+'px;--r:'+pct(R,-10,10)+'deg"><b>'+words[k%words.length]+'</b><b>'+words[(k+4)%words.length]+'</b></div>';
-  for(let k=0;k<3;k++){const img=POST["photo-"+k];a+='<div class="ph8'+(img?' has':'')+'" data-pk="photo-'+k+'" title="Tap to add your own picture" style="left:'+[2,38,70][k]+'%;top:'+[6,24,4][k]+'%;--r:'+[-6,4,-3][k]+'deg'+(img?';background-image:url('+img+')':'')+'"><b class="plus">+</b></div>'}
+ kitc(s,i,R){const groups=[[0,8],[8,15],[15,22]];let a="";groups.forEach(([g0,g1],k)=>{a+='<div class="note2" style="left:'+[2,35,68][k]+'%;--r:'+[-3,2,-2][k]+'deg"><b class="nh">'+(k?'SETLIST · cont.':'SETLIST · JKT')+'</b><ol start="'+(g0+1)+'">'+SONGS.slice(g0,g1).map(x=>'<li>'+esc(x.n.replace(/ \(How Could This Happen to Me\?\)/,"").replace("Crazy / Perfect World / Save You / This Song Saved My Life","Hits medley").replace("All Star / Sk8er Boi / Mr. Brightside / All the Small Things","Covers medley"))+'</li>').join("")+'</ol></div>'});
+  for(let k=0;k<3;k++){const img=POST["photo-"+k];a+='<div class="ph8'+(img?' has':'')+'" data-pk="photo-'+k+'" style="left:'+[4,37,70][k]+'%;top:'+['calc(206px + env(safe-area-inset-top))','calc(224px + env(safe-area-inset-top))','calc(206px + env(safe-area-inset-top))'][k]+';--r:'+[-6,4,-3][k]+'deg'+(img?';background-image:url('+img+')':'')+'"></div>'}
   const bcs=["#c86bff99","#6ab4ff99","#ffffffaa","#ff6bd699","#6ab4ff99","#c86bff99"];let stg='<div class="stg"><div class="screen"></div><div class="truss"></div>';[8,24,40,60,76,92].forEach((x,k)=>{stg+='<div class="beam" style="left:calc('+x+'% - 35px);--bc:'+bcs[k]+';--a1:'+(-28+k*4)+'deg;--a2:'+(22-k*5)+'deg;--sd:'+(3+k*.7).toFixed(1)+'s"></div><div class="lamp2" style="left:calc('+x+'% - 6px);--bc:'+bcs[k]+'"></div>'});stg+='<div class="haze"></div><div class="deck"></div></div>';a=stg+a;
   let c='<svg class="crowd" viewBox="0 0 400 90" preserveAspectRatio="none">';for(let x=-5;x<410;x+=17){const h=+pct(R,38,58);c+='<circle cx="'+x+'" cy="'+(90-h)+'" r="10" fill="#111"/><rect x="'+(x-12)+'" y="'+(98-h)+'" width="24" height="'+h+'" rx="10" fill="#111"/>';if(R()<.4)c+='<rect class="arm" style="animation-delay:-'+pct(R,0,1.4)+'s" x="'+(x+6)+'" y="'+(42-h)+'" width="6" height="'+(h-2)+'" rx="3" fill="#111"/>'}c+='</svg>';return a+c},
  wib(s,i,R){let t="";for(let k=0;k<16;k++){const x=k*25;t+='<path d="M'+x+' '+(10+Math.sin(k/15*Math.PI)*16)+' l25 '+((Math.sin((k+1)/15*Math.PI)-Math.sin(k/15*Math.PI))*16).toFixed(1)+' l-12 46z" fill="'+(k%2?"#2f6f9f":"#d9472b")+'" stroke="#1f2d3d" stroke-width="1.5"/>'}
@@ -827,7 +839,7 @@ const ART={
   '</svg></div><div class="cb cb2"><div class="glow"></div><div class="led"></div></div><div class="cb cb3"><div class="band"></div><div class="ofr"></div></div>'+'<svg style="right:4%;top:calc(18px + env(safe-area-inset-top));width:min(46%,280px);height:auto" viewBox="0 0 200 130"><rect x="2" y="2" width="196" height="126" rx="10" fill="#111" stroke="#444" stroke-width="3"/><rect x="16" y="12" width="168" height="62" rx="4" fill="#fbf8f0"/><rect x="16" y="12" width="168" height="12" fill="#d9482b"/><text x="24" y="44" font-family="Caveat,cursive" font-size="17" fill="#222">mixtape · side A</text><rect x="52" y="52" width="96" height="30" rx="15" fill="#222"/><g class="reel"><circle cx="70" cy="67" r="11" fill="#fbf8f0"/><path d="M70 58v18M61 67h18" stroke="#111" stroke-width="3"/></g><g class="reel"><circle cx="130" cy="67" r="11" fill="#fbf8f0"/><path d="M130 58v18M121 67h18" stroke="#111" stroke-width="3"/></g><path d="M40 128l12-26h96l12 26" fill="#333"/></svg>'},
  medley(s,i,R){const keys=Object.keys(DOOD),dc=["#e6007e","#111","#1fa3ff","#ff8a3d"];let d="";for(let k=0;k<6;k++){const sz=pct(R,22,40);d+='<svg class="dd" viewBox="0 0 24 24" style="left:'+pct(R,78,96)+'%;top:'+pct(R,4,86)+'%;width:'+sz+'px;height:'+sz+'px;--r:'+pct(R,-25,25)+'deg;--dl:'+(k*.08).toFixed(2)+'s;color:'+dc[k%4]+'"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">'+DOOD[keys[k%keys.length]]+'</g></svg>'}
   let city="";let x=0;while(x<100){const w=+pct(R,10,22);city+='<i style="left:'+x+'%;bottom:0;width:'+w+'%;height:'+pct(R,14,34)+'%;background:#10201c"></i>';x+=w}
-  const pp=[[80,2,6,3],[86,34,-5,0],[78,62,4,5]].map(([x,y,r,k])=>{const img=POST["poster-"+k];return'<div class="pst mp'+(img?' has':'')+'" data-slot="'+k+'" title="Tap to add your own picture" style="left:'+x+'%;top:'+y+'%;--r:'+r+'deg'+(img?';background-image:url('+img+')':'')+'">'+(img?'':POSTER[k])+'<b class="plus">+</b></div>'}).join("");
+  const pp=[[80,2,6,3],[86,34,-5,0],[78,62,4,5]].map(([x,y,r,k])=>{const img=POST["poster-"+k];return'<div class="pst mp'+(img?' has':'')+'" data-slot="'+k+'" style="left:'+x+'%;top:'+y+'%;--r:'+r+'deg'+(img?';background-image:url('+img+')':'')+'">'+(img?'':POSTER[k])+'</div>'}).join("");
   return '<div class="fz fz1">'+city+'</div><div class="fz fz2">'+ART.snga(s,i,R)+'</div><div class="fz fz3"><div class="lmp"></div></div><div class="fz fz4"></div><div class="seam s1"></div><div class="seam s2"></div><div class="seam s3"></div>'+pp+d},
 };
 function titleHTML(s){
@@ -1006,15 +1018,15 @@ let tx=0,ty=0,tt=0,tok=false;
 $("#stage").addEventListener("touchstart",e=>{tok=!e.target.closest("textarea");const t=e.touches[0];tx=t.clientX;ty=t.clientY;tt=Date.now()},{passive:true});
 $("#stage").addEventListener("touchend",e=>{if(!tok)return;const t=e.changedTouches[0],dx=t.clientX-tx,dy=t.clientY-ty;if(Date.now()-tt<700&&Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.6)go(cur+(dx<0?1:-1))},{passive:true});
 
-try{Object.assign(POST,ls.get("spbook.posters",{}))}catch(e){}
+
 const pin=document.createElement("input");pin.type="file";pin.accept="image/*";pin.hidden=true;document.body.appendChild(pin);let pslot=null;
-$("#stage").addEventListener("click",e=>{const p=e.target.closest(".pst[data-slot],.ph8[data-pk]");if(!p)return;pslot=p.dataset.pk||("poster-"+p.dataset.slot);
+$("#stage").addEventListener("click",e=>{return;const p=e.target.closest(".pst[data-slot],.ph8[data-pk]");if(!p)return;pslot=p.dataset.pk||("poster-"+p.dataset.slot);
   if(POST[pslot])ask("Picture","Replace this picture with a new one, or reset it to the original design?",()=>pin.click(),"Replace",()=>{delete POST[pslot];savePoster(pslot,null)},"Reset");else pin.click()});
 pin.addEventListener("change",async()=>{const f=pin.files[0];pin.value="";if(!f)return;try{const bmp=await createImageBitmap(f);const m=360,sc=Math.min(1,m/Math.max(bmp.width,bmp.height));const c=document.createElement("canvas");c.width=Math.round(bmp.width*sc);c.height=Math.round(bmp.height*sc);c.getContext("2d").drawImage(bmp,0,0,c.width,c.height);const url=c.toDataURL("image/jpeg",.82);POST[pslot]=url;savePoster(pslot,url)}catch(err){toast("That picture couldn't be used")}});
 function savePoster(k,url){if(url)USER_PICS.add(k);else USER_PICS.delete(k);ls.set("spbook.posters",Object.fromEntries(Object.entries(POST).filter(([a,v])=>String(v).startsWith("data:"))));refreshCurrent();if(!col){toast(url?"Picture saved on this device":"Picture reset");return}const ref=col.doc(k);(url?ref.set({img:url,u:Date.now()}):ref.delete()).then(()=>toast(url?"Picture saved to your account":"Picture reset"),()=>toast("Saved on this device only"))}
 $("#stage").appendChild(make(cur));updateBar();connect();tick();loadRepo();
 const PIC_NAMES={"poster-0":"no-pads-no-helmets-just-balls","poster-1":"still-not-getting-any","poster-2":"simple-plan","poster-3":"get-your-heart-on","poster-4":"taking-one-for-the-team","poster-5":"harder-than-it-looks","poster-6":"the-kids-in-the-crowd","photo-0":"nothing-changes-1","photo-1":"nothing-changes-2","photo-2":"nothing-changes-3"};
-const USER_PICS=new Set(Object.keys(POST).filter(k=>String(POST[k]).startsWith("data:")));
+const USER_PICS=new Set();
 function probe(src){return new Promise(ok=>{const im=new Image();im.onload=()=>ok(src);im.onerror=()=>ok(null);im.src=src})}
 async function loadRepoPics(){
   if(OFFLINE)return;let n=0;
