@@ -34,7 +34,7 @@ Song lyrics and album artwork are copyrighted. Don't publish `lyrics.json` or th
 - If you do use a public repo, upload only `index.html` and `README.md`, load your lyrics on each device with **Backstage → Choose backup file**, and add pictures by tapping each poster.
 
 ## Fonts
-The album fonts aren't included. The page falls back to free Google Fonts (Fredoka, Archivo Black, Bebas Neue, Anton). If you hold licences for the originals, put them in `fonts/` as `gothic.woff2`, `impacted.woff2`, `xband.woff2` and `steelfish.woff2`.
+The four album fonts live in `fonts/` (`gothic.woff2`, `impacted.woff2`, `xband.woff2`, `steelfish.woff2`). Keep that folder next to `index.html` or titles fall back to free Google Fonts. Note: these fonts have their own licences (Century Gothic is commercial); publishing them in a public repo is at your own discretion.
 
 ## Notes
 - Syncing to a Claude account only works in the Claude-hosted version. Self-hosted, lyrics come from `lyrics.json` plus the browser's own storage.
