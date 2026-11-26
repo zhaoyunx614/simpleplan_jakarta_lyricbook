@@ -87,8 +87,8 @@
 .pwall .pst{border:5px solid #fff;box-shadow:2px 4px 8px #0003;transform:rotate(var(--r))}
 .pwall .pst::before{content:"";position:absolute;left:50%;top:-10px;width:44px;height:16px;transform:translateX(-50%) rotate(-4deg);background:#fff9;box-shadow:0 1px 2px #0002}
 .t-gyho .dd{animation:pop .6s cubic-bezier(.3,1.6,.5,1) both,wob 3s ease-in-out infinite;animation-delay:var(--dl),calc(var(--dl) + .6s)}
-.t-gyho .st{color:#111;font-size:clamp(38px,10vw,72px);text-transform:uppercase;line-height:1.08;transform:rotate(-2deg);transform-origin:left}
-.t-gyho .st .tx{background:#fff;padding:2px 14px 0;-webkit-box-decoration-break:clone;box-decoration-break:clone;box-shadow:0 6px 0 #e6007e}
+.t-gyho .st{color:#111;font-size:clamp(38px,10vw,72px);text-transform:uppercase;line-height:1.32;transform:rotate(-2deg);transform-origin:left}
+.t-gyho .st .tx{background:#fff;padding:3px 14px 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone;box-shadow:0 5px 0 #e6007e}
 .t-gyho .panel{border-radius:3px;background:linear-gradient(90deg,#0000 38px,#ff8fb355 38px 40px,#0000 40px),repeating-linear-gradient(#0000 0 29px,#9ec9f04d 29px 30px),#fffdf8}
 .t-gyho .panel::before{content:"";position:absolute;top:-12px;left:50%;width:120px;height:28px;transform:translateX(-50%) rotate(-3deg);background:#7fd6ffaa}
 
@@ -435,6 +435,16 @@
 .t-kitc .ph8{z-index:3!important}
 .pwall .pst,.t-kitc .ph8{cursor:default!important}
 .plus{display:none!important}
+
+.mp[data-part],.t-covers .st span[data-part],.jp{cursor:pointer}
+.jp{text-decoration:underline dotted 2px;text-underline-offset:6px;text-decoration-color:#f6d77a99}
+.v-gv .bub{pointer-events:auto;cursor:pointer}
+.mp[data-part]::after{content:"↓";position:absolute;right:10px;top:8px;font:700 14px var(--sf);opacity:.55}
+.mp[data-part]{padding-right:32px}
+.t-covers .st span[data-part]::after{content:" ↓";font:700 13px var(--sf);color:#d9482b}
+.t-npnh .st.long{font-size:clamp(26px,6.6vw,52px);white-space:nowrap;max-width:100%}
+.ltools .szb{display:flex;gap:6px}
+.ltools .szb button{min-width:44px;min-height:40px;font:700 14px var(--sf)}
 @media (prefers-reduced-motion:reduce){.song *{animation:none!important}}
 </style>
 <style>
@@ -762,7 +772,7 @@ const VART={
   '<polygon class="beam" points="120,0 150,0 230,300 40,300" fill="url(#sp'+i+')"/><polygon class="beam b2" points="260,0 290,0 380,300 190,300" fill="url(#sp2'+i+')"/>'+
   '<rect width="400" height="300" fill="#fff" opacity=".04" class="haze"/>'+crowd+'</svg>'},
  gv(s,i,R){const cols=["#f6d77a","#fff","#e94f37","#7fd6ff","#ff8fb3"];let c="";for(let k=0;k<16;k++)c+='<i class="cf" style="left:'+pct(R,0,50)+'%;background:'+cols[k%5]+';animation-duration:'+pct(R,4,8)+'s;animation-delay:-'+pct(R,0,8)+'s;--x:'+pct(R,-40,40)+'px"></i>';
-  return '<div class="gvL"><div class="curt l"></div><svg class="gar" style="top:-4px;width:60%;left:-5%" viewBox="0 0 400 70" preserveAspectRatio="none"><path d="M0 6 Q50 60 100 6 Q150 60 200 6 Q250 60 300 6 Q350 60 400 6" fill="none" stroke="#fff" stroke-width="10" stroke-dasharray="2 5" stroke-linecap="round"/></svg></div><div class="gvR"><div class="rays"></div><svg class="bub" viewBox="0 0 200 130"><path d="M100 6 C160 6 194 30 194 60 C194 92 160 112 100 112 C88 112 76 111 66 108 L30 126 L42 100 C18 90 6 76 6 60 C6 30 40 6 100 6z" fill="#e2231a" stroke="#7a0a0a" stroke-width="4"/></svg></div>'+c},
+  return '<div class="gvL"><div class="curt l"></div><svg class="gar" style="top:-4px;width:60%;left:-5%" viewBox="0 0 400 70" preserveAspectRatio="none"><path d="M0 6 Q50 60 100 6 Q150 60 200 6 Q250 60 300 6 Q350 60 400 6" fill="none" stroke="#fff" stroke-width="10" stroke-dasharray="2 5" stroke-linecap="round"/></svg></div><div class="gvR"><div class="rays"></div><svg class="bub" data-part="1" viewBox="0 0 200 130"><path d="M100 6 C160 6 194 30 194 60 C194 92 160 112 100 112 C88 112 76 111 66 108 L30 126 L42 100 C18 90 6 76 6 60 C6 30 40 6 100 6z" fill="#e2231a" stroke="#7a0a0a" stroke-width="4"/></svg></div>'+c},
  astro(s,i,R){let st="";for(let k=0;k<10;k++)st+='<svg class="tw" style="left:'+pct(R,0,55)+'%;top:'+pct(R,0,36)+'%;width:'+pct(R,10,20)+'px;animation-delay:-'+pct(R,0,3)+'s" viewBox="0 0 24 24"><path d="M12 2l3 7 7 .5-5.5 4.5 2 7L12 17l-6.5 4 2-7L2 9.5 9 9z" fill="#111"/></svg>';
    let sky="";for(let k=0;k<60;k++)sky+='<circle class="tw2" style="animation-delay:-'+pct(R,0,3)+'s" cx="'+pct(R,0,400)+'" cy="'+pct(R,0,170)+'" r="'+pct(R,.4,1.6)+'" fill="#fff"/>';
   const scene='<svg class="space" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="pl'+i+'" cx=".35" cy=".35" r=".7"><stop offset="0" stop-color="#ff8a5a"/><stop offset="1" stop-color="#a3241f"/></radialGradient></defs><rect width="400" height="200" fill="#0d1430"/><rect width="400" height="200" fill="url(#neb'+i+')" opacity=".5"/>'+sky+
@@ -843,9 +853,10 @@ const ART={
   return '<div class="fz fz1">'+city+'</div><div class="fz fz2">'+ART.snga(s,i,R)+'</div><div class="fz fz3"><div class="lmp"></div></div><div class="fz fz4"></div><div class="seam s1"></div><div class="seam s2"></div><div class="seam s3"></div>'+pp+d},
 };
 function titleHTML(s){
-  if(s.t==="medley")return'<h2 class="st">'+s.parts.map(([n,e])=>'<span class="mp m-'+e+'"><span class="tx">'+esc(n)+'</span><small>'+esc(ERAS[e].split(" · ")[0])+'</small></span>').join("")+'</h2>';
-  if(s.t==="covers")return'<h2 class="st">'+s.parts.map(([n,c,a])=>'<span>'+esc(n)+' <small style="font:600 12px var(--sf);opacity:.6">'+esc(a)+'</small></span>').join("")+'</h2>';
-  return'<h2 class="st"><span class="tx">'+esc(s.n)+'</span></h2>';
+  if(s.t==="medley")return'<h2 class="st">'+s.parts.map(([n,e],k)=>'<span class="mp m-'+e+'" data-part="'+k+'" role="button" tabindex="0"><span class="tx">'+esc(n)+'</span><small>'+esc(ERAS[e].split(" · ")[0])+'</small></span>').join("")+'</h2>';
+  if(s.t==="covers")return'<h2 class="st">'+s.parts.map(([n,c,a],k)=>'<span data-part="'+k+'" role="button" tabindex="0">'+esc(n)+' <small style="font:600 12px var(--sf);opacity:.6">'+esc(a)+'</small></span>').join("")+'</h2>';
+  if(s.parts)return'<h2 class="st long"><span class="tx">'+s.parts.map(([n],k)=>'<span class="jp" data-part="'+k+'" role="button" tabindex="0">'+esc(n)+'</span>').join(' / ')+'</span></h2>';
+  return'<h2 class="st'+(s.n.length>15?' long':'')+'"><span class="tx">'+esc(s.n)+'</span></h2>';
 }
 const slug=t=>t.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 const partsOf=s=>s.parts?s.parts.map(([n,e,a],k)=>({key:s.id+"--"+slug(n),name:n,cls:e,sub:a||(ERAS[e]||"").split(" · ")[0],k})):[{key:s.id,name:s.n}];
@@ -861,7 +872,7 @@ function lyricsHTML(key){
     if(m)return'<div><span class="lab">'+esc(m[1])+'</span></div>';return'<p class="ln">'+esc(t)+'</p>'}).join("");
 }
 function partBlock(p){
-  if(hasText(p.key)&&editing!==p.key)return'<div class="ltools"><span></span><button data-act="edit">Edit lyrics</button></div><div class="lines">'+lyricsHTML(p.key)+'</div>';
+  if(hasText(p.key)&&editing!==p.key)return'<div class="ltools"><span class="szb"><button data-act="am" aria-label="Smaller text">A−</button><button data-act="ap" aria-label="Larger text">A+</button></span><button data-act="edit">Edit lyrics</button></div><div class="lines">'+lyricsHTML(p.key)+'</div>';
   return'<div class="ph"><h3>Lyrics</h3><p>Paste the lyrics for “'+esc(p.name)+'” below. Lines in [brackets], like [Chorus], become small section labels.</p><textarea aria-label="Lyrics for '+esc(p.name)+'" placeholder="[Verse 1]\n…paste here…"></textarea><div class="row"><button class="btn" data-act="save">Save lyrics</button>'+(hasText(p.key)?'<button class="btn ghost" data-act="cancel">Cancel</button>':'')+'</div></div>';
 }
 function partWrap(s,p){
@@ -874,10 +885,12 @@ function songPage(s,i){
   const el=document.createElement("section");el.className="page song t-"+s.t+(s.t==="gyho"||s.t==="medley"?" pwall":"")+(s.v?" v-"+s.v:"")+(GR[s.t]&&!s.v?" "+GR[s.t]:"");
   el.innerHTML=hero(s,i)+'<div class="panel lyr">'+lyrBlock(s)+'</div>';fillTA(el);
   el.addEventListener("click",e=>{
+    const jp=e.target.closest("[data-part]");if(jp){const t=el.querySelector('.mpart[data-k="'+partsOf(s)[+jp.dataset.part].key+'"]');if(t)el.scrollTo({top:t.getBoundingClientRect().top-el.getBoundingClientRect().top+el.scrollTop-12,behavior:reduce?"auto":"smooth"});return}
     const w=e.target.closest(".mpart");if(!w)return;const k=w.dataset.k;const p=partsOf(s).find(x=>x.key===k);
     const ln=e.target.closest(".ln");const b=e.target.closest("[data-act]");
     if(!b)return;const act=b.dataset.act;
     if(act==="save"){const v=w.querySelector("textarea").value;const old=state[k];state[k]={text:v,hl:old&&old.text===v?old.hl:[],u:Date.now()};editing=null;put(k);repart(w,s,p);toast(v.trim()?"Lyrics saved":"Lyrics cleared")}
+    if(act==="am"){setLz(lz-2);return}if(act==="ap"){setLz(lz+2);return}
     if(act==="edit"){editing=k;repart(w,s,p);w.querySelector("textarea").focus()}
     if(act==="cancel"){editing=null;repart(w,s,p)}
   });
